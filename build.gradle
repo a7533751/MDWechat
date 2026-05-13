@@ -5,6 +5,7 @@ buildscript {
     repositories {
         google()
         jcenter()
+        maven { url 'https://api.xposed.info/' }
         maven { url 'https://jitpack.io' }
     }
     dependencies {
@@ -20,6 +21,7 @@ allprojects {
     repositories {
         jcenter()
         google()
+        maven { url 'https://api.xposed.info/' }
         maven { url 'https://jitpack.io' }
     }
 }
