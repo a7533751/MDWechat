@@ -34,7 +34,11 @@ jobs:
           sdkmanager \
             "platform-tools" \
             "platforms;android-27" \
-            "build-tools;29.0.3"
+            "build-tools;29.0.3" \
+            "ndk;21.4.7075529"
+
+      - name: Configure NDK for legacy Android Gradle Plugin
+        run: echo "ndk.dir=$ANDROID_HOME/ndk/21.4.7075529" >> local.properties
 
       - name: Set up JDK 8 for Gradle
         uses: actions/setup-java@v4
