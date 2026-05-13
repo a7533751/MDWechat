@@ -27,7 +27,7 @@ object ToastUtils {
     }
 
     private fun getContext(): Context? {
-        Objects.Main.LauncherUI?.let { return it }
+        Objects.Main.LauncherUI.get()?.let { return it }
         return try {
             Class.forName("android.app.ActivityThread")
                     .getMethod("currentApplication")
