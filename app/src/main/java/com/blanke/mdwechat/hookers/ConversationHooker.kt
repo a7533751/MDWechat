@@ -62,7 +62,7 @@ object ConversationHooker : HookerProvider {
         })
         XposedBridge.hookAllMethods(CC.View, "setBackgroundColor", object : XC_MethodHook() {
             override fun beforeHookedMethod(param: MethodHookParam) {
-                val view = param.thisObject as View
+                val view = param.thisObject as? View ?: return
                 val clazz = view::class.java.name
 //                    LogUtil.logXp("=====================")
 //                    LogUtil.logViewStackTracesXp(ViewUtils.getParentViewSafe(view, 15))
@@ -82,7 +82,7 @@ object ConversationHooker : HookerProvider {
         if (WechatGlobal.wxVersion!! >= Version("7.0.4")) {
             XposedBridge.hookAllMethods(CC.View, "setBackground", object : XC_MethodHook() {
                 override fun beforeHookedMethod(param: MethodHookParam) {
-                    val view = param.thisObject as View
+                    val view = param.thisObject as? View ?: return
                     val pView = view.parent
                     if ((pView is View) && (pView::class.java.name == ConversationListView.name)) {
                         param.result = null
