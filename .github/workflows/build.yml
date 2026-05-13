@@ -5,7 +5,7 @@ on:
   push:
     branches:
       - v3.6
-      - v3.6-beta3-build
+      - v3.6-beta1-build
   pull_request:
 
 permissions:
