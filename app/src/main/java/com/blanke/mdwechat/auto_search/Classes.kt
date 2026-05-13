@@ -11,6 +11,7 @@ import android.view.SubMenu
 import android.view.View
 import android.view.animation.Animation
 import android.widget.CheckBox
+import android.widget.ImageView
 import android.widget.LinearLayout
 import android.widget.ListView
 import android.widget.TextView
@@ -67,10 +68,10 @@ object Classes {
             return ReflectionUtil.findClassIfExists("${WechatGlobal.wxPackageName}.ui.LauncherUIBottomTabView", WechatGlobal.wxLoader)
         }
 
-//    val TabIconView: Class<*>?
-//        get() {
-//            return ReflectionUtil.findClassIfExists("${WechatGlobal.wxPackageName}.ui.TabIconView", WechatGlobal.wxLoader)
-//        }
+    val TabIconView: Class<*>?
+        get() {
+            return ReflectionUtil.findClassIfExists("${WechatGlobal.wxPackageName}.ui.TabIconView", WechatGlobal.wxLoader)
+        }
 
 //    val ThreadExecutor: Class<*>?
 //        get() {
@@ -83,15 +84,15 @@ object Classes {
 //                    .firstOrNull()
 //        }
 
-//    val LauncherUIBottomTabViewItem: Class<*>?
-//        get() {
-//            return ReflectionUtil.findClassesFromPackage(WechatGlobal.wxLoader, WechatGlobal.wxClasses, "${WechatGlobal.wxPackageName}.ui")
-//                    .filterByField(TabIconView!!.name)
-//                    .filterByField(CC.View.name)
-//                    .filterByField(TextView::class.java.name)
-//                    .filterByField(ImageView::class.java.name)
-//                    .firstOrNull()
-//        }
+    val LauncherUIBottomTabViewItem: Class<*>?
+        get() {
+            return ReflectionUtil.findClassesFromPackage(WechatGlobal.wxLoader, WechatGlobal.wxClasses, "${WechatGlobal.wxPackageName}.ui")
+                    .filterByField(TabIconView!!.name)
+                    .filterByField(CC.View.name)
+                    .filterByField(TextView::class.java.name)
+                    .filterByField(ImageView::class.java.name)
+                    .firstOrNull()
+        }
 
     val ActionBarContainer: Class<*>?
         get() {
